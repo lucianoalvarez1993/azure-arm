@@ -9,6 +9,12 @@
                 "description": "The name of you Virtual Machine."
             }
         },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Username for the Virtual Machine."
+            }
+        },
         "authenticationType": {
             "type": "string",
             "defaultValue": "password",
@@ -140,6 +146,10 @@
     },
     "variables": {
         "storageAccountType": "Standard_LRS",
+        "imagePublisher": "Canonical",
+        "imageOffer": "UbuntuServer",
+        "location": "[resourceGroup().location]",
+        "storage_kind": "storage",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
         "linuxConfiguration": {
             "disablePasswordAuthentication": false,
@@ -158,10 +168,6 @@
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2018-10-01",
             "name": "[parameters('networkInterfaceName')]",
-            "imagePublisher": "Canonical",
-            "imageOffer": "UbuntuServer",
-            "location": "[resourceGroup().location]",
-            "storage_kind": "storage",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroupName'))]",
                 "[resourceId('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]",

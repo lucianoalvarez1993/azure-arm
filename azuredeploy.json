@@ -11,6 +11,7 @@
         },
         "adminUsername": {
             "type": "string",
+            "defaultValue": "default-admin"
             "metadata": {
                 "description": "Username for the Virtual Machine."
             }
@@ -164,8 +165,8 @@
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2018-10-01",
             "name": "[parameters('networkInterfaceName')]",
-            "imagePublisher": "MicrosoftWindowsServer",
-            "imageOffer": "WindowsServer",
+            "imagePublisher": "Canonical",
+            "imageOffer": "UbuntuServer",
             "location": "[resourceGroup().location]",
             "storage_kind": "storage",
             "dependsOn": [

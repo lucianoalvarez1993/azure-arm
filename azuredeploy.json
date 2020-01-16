@@ -136,7 +136,7 @@
                 "description": "Name of the Network Interface"
             }
         },
-        "StorageAccountName": {
+        "storageAccountName": {
             "type": "string",
             "defaultValue": "[concat(uniquestring(resourceGroup().id), 'satagsvm')]",
             "metadata": {

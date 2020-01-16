@@ -11,7 +11,7 @@
         },
         "adminUsername": {
             "type": "string",
-            "defaultValue": "defaultAdmin",
+            "defaultValue": "simpleadmin",
             "metadata": {
                 "description": "Username for the Virtual Machine."
             }
